@@ -1,0 +1,24 @@
+-------- To add the Data in the Table 
+import boto3
+dynamo = boto3.resource('dynamodb')
+table = dynamo.Table("mayur")
+table.put_item(
+
+    Item={
+        'mayur':"abc",
+        'age':"24",
+        'emp_id':"100"
+        }
+)
+print(dynamo)
+
+-------- To get Data from Table 
+dynamo = boto3.resource('dynamodb')
+table = dynamo.Table("mayur")
+output=table.get_item(
+    TableName='mayur',
+    Key={
+        'mayur':"abc"         
+    }
+)
+print(output["Item"])
