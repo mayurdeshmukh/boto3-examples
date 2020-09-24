@@ -1,0 +1,13 @@
+import boto3
+client = boto3.client('s3')
+s3 = client.create_bucket(
+    ACL='private',
+    Bucket='mayurdeshmukh74790094',
+    CreateBucketConfiguration={
+        'LocationConstraint': 'ap-south-1'
+    },
+)
+
+to print (s3["key"]["key"]["key"])
+#print(s3["ResponseMetadata"]["HostId"])
+#print(s3)
